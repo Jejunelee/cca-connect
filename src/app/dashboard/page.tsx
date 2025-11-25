@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '../../../lib/supabaseClient'
 import * as XLSX from 'xlsx'
 import { saveAs } from 'file-saver'
 
@@ -11,6 +10,9 @@ export default function DashboardPage() {
   const [isAuthed, setIsAuthed] = useState(false)
   const [emails, setEmails] = useState<any[]>([])
   const [error, setError] = useState('')
+
+  // Move supabase import here
+  const supabase = require('../../../lib/supabaseClient').supabase
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
