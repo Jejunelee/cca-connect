@@ -7,14 +7,14 @@ export default function Features() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* LEFT SIDE — VIDEO AND HEADING */}
           <div>
-            <h2 className="text-5xl font-semibold mb-4 text-gray-900">
+            <h2 className="text-5xl font-semibold mb-3 text-gray-900">
               How It Works for You
             </h2>
   
             <div className="w-full md:w-[510px] h-[330px] rounded-2xl overflow-hidden shadow-xl">
               <iframe
                 className="w-full h-full rounded-xl"
-                src="https://www.youtube.com/embed/hB7CDrVnNCs"
+                src="https://www.youtube.com/embed/gJo-2MTxDJQ"
                 title="How It Works — Culinary Connect"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
