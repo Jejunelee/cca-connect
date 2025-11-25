@@ -38,6 +38,8 @@ body {
   text-align: center;
   color: white;
   position: relative;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .reach-overlay {
