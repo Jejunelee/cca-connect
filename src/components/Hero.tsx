@@ -1,6 +1,13 @@
 "use client";
 
 export default function Hero() {
+    const scrollToReach = () => {
+    const reachSection = document.getElementById("reach");
+    if (reachSection) {
+      reachSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -27,13 +34,6 @@ export default function Hero() {
 
         <h1
           className="hero-heading"
-          style={{
-            fontSize: "2.4rem",
-            fontWeight: 400,
-            lineHeight: 1.2,
-            marginBottom: "1.3rem",
-            color: "#000",
-          }}
         >
           Get access to the Philippines <b>top</b> <br />
           Food Beverage and Hospitality <b>experts</b>
@@ -41,6 +41,7 @@ export default function Hero() {
 
         <button
           className="cta-button"
+          onClick={scrollToReach} // <-- add this
           style={{
             padding: "0.6rem 2.6rem",
             backgroundColor: "#a9cee7",
@@ -72,6 +73,15 @@ export default function Hero() {
       </div>
 
       <style jsx>{`
+        /* Hero heading styles */
+        .hero-heading {
+          font-size: 2.4rem;
+          font-weight: 400;
+          line-height: 1.2;
+          margin-bottom: 1.3rem;
+          color: #000;
+        }
+
         /* Button hover effects */
         .cta-button {
           transition: background-color 0.5s ease,
@@ -121,7 +131,7 @@ export default function Hero() {
           }
 
           .hero-heading {
-            font-size: 1.8rem;
+            font-size: 1.5rem; /* Reduced font size for mobile */
           }
 
           .cta-button {
