@@ -4,6 +4,8 @@ import Features from '@/components/Features'
 import Events from '@/components/Events'
 import Reach from '@/components/Reach'
 import Footer from '@/components/Footer'
+import Pillars from '@/components/Pillars'
+import OtherServices from '@/components/OtherServices'
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
+      <Pillars />
+      <OtherServices />
       <Events />
       <Reach />
       <Footer />

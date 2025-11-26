@@ -43,18 +43,19 @@ export default function Events() {
         {/* Card 2 */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
           <img
-            src="/events/2.png"
+            src="/events/2.jpg"
             alt="Event 2"
             className="rounded-2xl shadow-xl w-full aspect-[4/3] object-cover object-top mb-4"
+            style={{ objectPosition: "center 30%" }}
           />
           <span className="ml-6 inline-block bg-[#C2D9F0] text-black px-4 py-1 rounded-full text-xs sm:text-sm mb-3">
             Stay Tuned
           </span>
           <h3 className="ml-6 text-gray-800 font-semibold text-lg sm:text-xl mb-1">
-            January Masterclass Summit
+            Trends, Technology, & Opportunities
           </h3>
           <p className="ml-6 text-gray-700 text-base sm:text-lg flex items-center gap-2 mb-4">
-            <Calendar className="w-4 h-4" /> January 2026
+            <Calendar className="w-4 h-4" /> December 4, 2025
           </p>
         </div>
 
