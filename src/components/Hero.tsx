@@ -13,17 +13,20 @@ export default function Hero() {
         paddingBottom: "10rem",
         paddingLeft: "6rem",
         backgroundColor: "#f6f4f4",
+        fontFamily: "var(--font-jost), sans-serif",
       }}
     >
       {/* LEFT */}
-      <div style={{ maxWidth: "700px" }}>
+      <div className="hero-left" style={{ maxWidth: "700px" }}>
         <img
           src="/logo.png"
           alt="CCA Connect Logo"
+          className="hero-logo"
           style={{ width: "240px", marginBottom: "1rem", marginLeft: "-0.3rem" }}
         />
 
         <h1
+          className="hero-heading"
           style={{
             fontSize: "2.4rem",
             fontWeight: 400,
@@ -37,51 +40,29 @@ export default function Hero() {
         </h1>
 
         <button
-  className="cta-button"
-  style={{
-    padding: "0.6rem 2.6rem",
-    backgroundColor: "#a9cee7",
-    border: "none",
-    borderRadius: "999px",
-    fontSize: "1.7rem",
-    cursor: "pointer",
-    color: "#000",
-    boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
-    transition: "all 0.35s ease",
-  }}
->
-  Get Access
-
-  <style jsx>{`
-    .cta-button {
-      transition: background-color 0.5s ease, 
-                  transform 0.35s ease, 
-                  box-shadow 0.35s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #6fb3dd; /* darker smooth blue */
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.25);
-    }
-
-    .cta-button:active {
-      transform: scale(0.98);
-    }
-  `}</style>
-</button>
-
+          className="cta-button"
+          style={{
+            padding: "0.6rem 2.6rem",
+            backgroundColor: "#a9cee7",
+            border: "none",
+            borderRadius: "999px",
+            fontSize: "1.7rem",
+            cursor: "pointer",
+            color: "#000",
+            boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
+          }}
+        >
+          Learn More
+        </button>
       </div>
 
       {/* RIGHT GRID */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "1.2rem",
-          width: "fit-content",
-        }}
-      >
+      <div className="hero-right" style={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: "1.2rem",
+        width: "fit-content",
+      }}>
         <ExpertCard name="Isabel Lozano" image="experts/expert1.jpg" height="300px" />
         <ExpertCard name="Prof X" image="experts/expert4.webp" height="250px" />
         <ExpertCard name="Kerwin Fuentanilla" image="experts/expert2.jpg" height="250px" />
@@ -89,6 +70,80 @@ export default function Hero() {
           <ExpertCard name="RL Garcia" image="experts/expert3.jpg" height="300px" />
         </div>
       </div>
+
+      <style jsx>{`
+        /* Button hover effects */
+        .cta-button {
+          transition: background-color 0.5s ease,
+                      transform 0.35s ease,
+                      box-shadow 0.35s ease;
+          font-family: var(--font-jost), sans-serif;
+        }
+
+        .cta-button:hover {
+          background-color: #6fb3dd;
+          transform: translateY(-4px) scale(1.03);
+          box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .cta-button:active {
+          transform: scale(0.98);
+        }
+
+        /* Expert card hover effects */
+        .expert-card:hover {
+          transform: translateY(-8px) scale(1.03);
+          box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.35);
+        }
+        .expert-card:hover img {
+          transform: scale(1.08);
+        }
+
+        /* MOBILE STYLES */
+        @media screen and (max-width: 768px) {
+          #hero {
+            flex-direction: column;
+            padding: 2rem 1.5rem 5rem 1.5rem;
+          }
+
+          .hero-left {
+            text-align: center;
+            margin-bottom: 2rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .hero-logo {
+            margin-left: 0;
+            width: 180px;
+          }
+
+          .hero-heading {
+            font-size: 1.8rem;
+          }
+
+          .cta-button {
+            font-size: 1.4rem;
+            padding: 0.5rem 2rem;
+          }
+
+          .hero-right {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            overflow-x: auto;
+            width: 100%;
+            padding-bottom: 1rem;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .hero-right > div {
+            flex: 0 0 auto;
+          }
+        }
+      `}</style>
     </section>
   );
 }
@@ -112,6 +167,7 @@ function ExpertCard({
         height,
         boxShadow: "0px 10px 30px rgba(0,0,0,0.25)",
         transition: "transform 0.35s ease, box-shadow 0.35s ease",
+        fontFamily: "var(--font-jost), sans-serif",
       }}
       className="expert-card"
     >
@@ -136,23 +192,14 @@ function ExpertCard({
           paddingBottom: "0.6rem",
           fontSize: "1.2rem",
           color: "white",
-          background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0, 0, 0, 0.85) 2%, rgba(0,0,0,0) 50%)",
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0, 0, 0, 0.85) 2%, rgba(0,0,0,0) 50%)",
           textAlign: "center",
           fontWeight: 500,
         }}
       >
         {name}
       </div>
-
-      <style jsx>{`
-        .expert-card:hover {
-          transform: translateY(-8px) scale(1.03);
-          box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.35);
-        }
-        .expert-card:hover img {
-          transform: scale(1.08);
-        }
-      `}</style>
     </div>
   );
 }

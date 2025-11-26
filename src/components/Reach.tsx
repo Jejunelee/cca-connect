@@ -74,7 +74,6 @@ export default function Reach() {
       setEmail('')
       setIsDropdownOpen(false)
 
-      // Fade out message after 3 seconds
       setTimeout(() => {
         setMessage('')
         setIsSuccess(false)
@@ -83,7 +82,11 @@ export default function Reach() {
   }
 
   return (
-    <section id="reach" className="reach-container">
+    <section
+      id="reach"
+      className="reach-container"
+      style={{ fontFamily: 'var(--font-jost), sans-serif' }} // Jost font applied
+    >
       <div className="reach-overlay"></div>
 
       <div className="reach-content">
@@ -142,6 +145,7 @@ export default function Reach() {
                       fontSize: '0.9rem',
                       color: '#e0e0e0',
                       transition: 'background-color 0.2s ease',
+                      fontFamily: 'var(--font-jost), sans-serif', // ensure suggestions use Jost
                     }}
                     onClick={() => handleSelectSuggestion(domain)}
                     onMouseEnter={(e) => {
