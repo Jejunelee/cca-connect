@@ -70,7 +70,7 @@ export default function Events() {
             Stay Tuned
           </span>
           <h3 className="ml-6 text-gray-800 font-semibold text-lg sm:text-xl mb-1">
-            March Masterclass Summit
+            H&R Summit
           </h3>
           <p className="ml-6 text-gray-700 text-base sm:text-lg flex items-center gap-2 mb-4">
             <Calendar className="w-4 h-4" /> March 2026
