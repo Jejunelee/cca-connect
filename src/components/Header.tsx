@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react' // Lucide icons
 export default function Header() {
   const [isMobile, setIsMobile] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null)
 
   // Detect screen size
   useEffect(() => {
@@ -14,6 +15,12 @@ export default function Header() {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  // Function to get dynamic style for hover
+  const getLinkStyle = (linkName: string): React.CSSProperties => ({
+    ...navLinkStyle,
+    color: hoveredLink === linkName ? '#0070f3' : '#111', // change color on hover
+  })
 
   return (
     <header
@@ -56,11 +63,54 @@ export default function Header() {
             zIndex: 50,
           }}
         >
-          <a href="#hero" style={navLinkStyle} onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="#about" style={navLinkStyle} onClick={() => setMenuOpen(false)}>About Us</a>
-          <a href="#experts" style={navLinkStyle} onClick={() => setMenuOpen(false)}>Our Experts</a>
-          <a href="#login" style={{ ...navLinkStyle, fontWeight: 'bold' }} onClick={() => setMenuOpen(false)}>Log In</a>
-          <a href="#contact" style={navLinkStyle} onClick={() => setMenuOpen(false)}>Contact Us</a>
+          <a
+            href="#hero"
+            style={getLinkStyle('home')}
+            onMouseEnter={() => setHoveredLink('home')}
+            onMouseLeave={() => setHoveredLink(null)}
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </a>
+          <a
+            href="#about"
+            style={getLinkStyle('about')}
+            onMouseEnter={() => setHoveredLink('about')}
+            onMouseLeave={() => setHoveredLink(null)}
+            onClick={() => setMenuOpen(false)}
+          >
+            About Us
+          </a>
+          <a
+            href="#experts"
+            style={getLinkStyle('experts')}
+            onMouseEnter={() => setHoveredLink('experts')}
+            onMouseLeave={() => setHoveredLink(null)}
+            onClick={() => setMenuOpen(false)}
+          >
+            Our Experts
+          </a>
+          <a
+            href="files"
+            style={{
+              ...getLinkStyle('login'),
+              fontWeight: 'bold',
+            }}
+            onMouseEnter={() => setHoveredLink('login')}
+            onMouseLeave={() => setHoveredLink(null)}
+            onClick={() => setMenuOpen(false)}
+          >
+            Log In
+          </a>
+          <a
+            href="#contact"
+            style={getLinkStyle('contact')}
+            onMouseEnter={() => setHoveredLink('contact')}
+            onMouseLeave={() => setHoveredLink(null)}
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact Us
+          </a>
         </nav>
       )}
     </header>
