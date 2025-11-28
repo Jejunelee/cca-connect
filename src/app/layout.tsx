@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 // Initialize Jost font
 const jost = Jost({
   subsets: ["latin"],
   variable: "--font-jost",
-  weight: ["400", "500", "600", "700"], // adjust weights as needed
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${jost.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
