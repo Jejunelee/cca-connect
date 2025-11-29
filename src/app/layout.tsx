@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import "./globals.css";
 
 // Initialize Jost font
@@ -25,6 +26,12 @@ export default function RootLayout({
       <body className={`${jost.variable} font-sans antialiased`}>
         {children}
         <Analytics />
+        <Script
+          defer
+          src="https://umami-qw6d3biym-pinesheets-projects.vercel.app/script.js"
+          data-website-id="75177303-2683-4c76-8506-61e3a80c6081"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
