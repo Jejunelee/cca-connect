@@ -27,11 +27,11 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Script
-          defer
-          src="https://umami-qw6d3biym-pinesheets-projects.vercel.app/script.js"
-          data-website-id="75177303-2683-4c76-8506-61e3a80c6081"
-          strategy="afterInteractive"
-        />
+  defer
+  src="https://umami-five-weld-41.vercel.app/script.js"
+  data-website-id="75177303-2683-4c76-8506-61e3a80c6081"
+  strategy="afterInteractive"
+/>
       </body>
     </html>
   );
